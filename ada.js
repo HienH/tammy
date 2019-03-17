@@ -12,12 +12,15 @@ function Ada() {
   }
 
   this.update = function () {
-    this.x = this.x + this.xspeed;
-    this.y = this.y + this.xspeed;
+    this.x += this.xspeed * 6;
+    this.y += this.yspeed * 6;
+
+
+    this.x = constrain(this.x, 0, width - scl)
+    this.y = constrain(this.y, 0, height - scl)
   }
 
   this.show = function () {
-    fill(255);
-    rect(this.x, height - 20, 20, 20);
+    image(cat, this.x, this.y, 150, 150);
   }
 }
